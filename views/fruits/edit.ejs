@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Fruit</title>
+</head>
+<body>
+    <h1>Edit Fruit: <%=fruit.fruitName%></h1> <!-- show specific fruit data that we're editing -->
+    <form action="/fruits/<%=fruit._id%>?_method=PUT" method="POST"> <!-- only options with forms are PUT and GET, trick ejs by disguising POST request as a put (put method=PUT into action line)-->
+        <label>Name:</label>
+        <input type="text" name="fruitName" value="<%=fruit.fruitName%>"/> <!-- can prepopulate by setting value = "whatever you want here"-->
+        <label>Ready to eat?</label>
+        <input 
+            name="isReadyToEat"
+            type="checkbox"
+            <% if (fruit.isReadyToEat) { %>
+                checked
+            <% } %> >
+        <button type-="submit">Update Fruit</button>
+    </form>
+    <a href="/fruits">Back to Fruits Collection</a>
+</body>
+</html>

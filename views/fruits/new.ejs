@@ -1,0 +1,22 @@
+<!-- views/fruits/new.ejs -->
+ <!-- page to create form for data entry of new fruit -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create a Fruit</title>
+  </head>
+  <body>
+    <h1>Create a New Fruit!</h1>
+    <form action="/fruits" method="POST"> <!-- create a form! action='file path', method='http verb'-->
+        <label for="fruitName">Name: </label>
+        <input name="fruitName" type="text"/> <!-- add name attribute on each input so that we can see what the user types in after submission -->
+        <label for="isReadyToEat">Ready to eat? </label>
+        <input name="isReadyToEat" type="checkbox"/>
+        <button type="submit">Add fruit</button>
+    </form>
+    <a href="/fruits">Back to Fruit Collection</a>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Show Page</title>
+</head>
+<body>
+    <h1><%=fruit.fruitName%></h1>
+    <!-- value of THIS variable is going to be the value of the property that we defined in our show route -->
+    <% if (fruit.isReadyToEat) { %>
+        <p>The fruit is ready to eat!</p>
+    <% } else { %>
+        <p>The fruit is not ready to eat yet :/</p>
+    <% } %>
+    <form action="/fruits/<%=fruit._id%>?_method=DELETE" method="POST"> <!-- you can't make a delete method, you have to do a post method and pass in the queryparam as DELETE-->
+        <button type="submit">Delete <%=fruit.fruitName%></button>
+    </form>
+    <a href="/fruits/<%=fruit._id%>/edit">Edit <%=fruit.fruitName%></a>
+    <a href="/fruits">Back to Fruits</a>
+</body>
+</html>

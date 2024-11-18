@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruits Index</title>
+</head>
+<body>
+    <h1>My Fruit Collection</h1>
+    <ul>
+        <% fruits.forEach((fruit) => { %> <!-- each element is assigned to the variable fruit as we loop thru fruits array-->
+            <li>
+                <a href="/fruits/<%=fruit._id%>">
+                    <%=fruit.fruitName%>
+                </a>
+            </li> <!-- print fruit name in list -->
+            <!-- console.log(fruit) // shows our fruits list in the terminal --> 
+        <% }) %>
+        <a href="/fruits/new">Add new fruit!</a>
+    </ul>
+</body>
+</html>
